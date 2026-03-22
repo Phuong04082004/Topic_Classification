@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu - Topic Classifier</title>
+    <meta name="google-site-verification" content="HkTNCafy0wZDKbvalhmK-sBSquzKHrgUl36k-nZKS8U">
+    <meta name="description" content="Topic Classifier - Phân loại chủ đề văn bản tiếng Việt nhanh và chính xác. Dùng AI TF-IDF + Naive Bayes, hỗ trợ 10+ chủ đề, giao diện tiếng Việt." />
+    <link rel="canonical" href="https://leotran-topic-classification.netlify.app/" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <!-- SEO: OG/Twitter basic (Song ngu: the mo ta chia se xa hoi) -->
+    <meta property="og:title" content="Topic Classifier - Phân loại văn bản tiếng Việt" />
+    <meta property="og:description" content="Phân loại văn bản tiếng Việt thành nhiều chủ đề. Nhanh, chính xác, giao diện tiếng Việt." />
+    <meta property="og:url" content="https://leotran-topic-classification.netlify.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://leotran-topic-classification.netlify.app/assets/logo.svg" />
+    <meta name="twitter:card" content="summary" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com? plugins=forms,container-queries"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Config -->
+    <!-- Dùng để cấu hình Tailwind CSS cho chế độ sáng/tối và tùy chỉnh màu sắc, font chữ -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'light-bg': '#EFF6FF',
+                        'light-card': 'rgba(255, 255, 255, 0.8)',
+                        'light-border': 'rgba(229, 231, 235, 0.8)',
+                        'dark-bg': '#0B021D',
+                        'dark-card': 'rgba(22, 12, 44, 0.8)',
+                        'dark-border': '#2B1A4B',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+    
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/shared.css">
+    <!-- Home CSS -->
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body class="font-sans bg-light-bg dark:bg-dark-bg text-gray-900 dark:text-gray-100 antialiased">
+
+    <!-- Desktop Navbar -->
+    <nav class="navbar-desktop">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <img src="assets/logo.svg" alt="Topic Classifier logo" class="navbar-logo-img">
+                <span class="navbar-logo-text">Topic Classifier</span>
+            </a>
+            
+            <div class="navbar-menu">
+                <a href="index.html" class="navbar-link" data-page="home">
+                    <span class="navbar-link-emoji">🏠</span>
+                    <span>Giới thiệu</span>
+                </a>
+                <a href="pages/classify.html" class="navbar-link" data-page="classify">
+                    <span class="navbar-link-emoji">🔍</span>
+                    <span>Phân loại</span>
+                </a>
+                <a href="pages/history.html" class="navbar-link" data-page="history">
+                    <span class="navbar-link-emoji">📜</span>
+                    <span>Lịch sử</span>
+                </a>
+            </div>
+            
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <span class="theme-toggle-icon">☀️</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="w-full">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-icon">📰</div>
+                <h1 class="hero-title">
+                    Hệ Thống Phân Loại Chủ Đề
+                </h1>
+                <p class="hero-subtitle">
+                    Tự động phân loại văn bản tiếng Việt thành 10 chủ đề với độ chính xác cao nhờ công nghệ AI
+                </p>
+                <a href="pages/classify.html" class="hero-cta">
+                    🚀 Bắt đầu ngay
+                </a>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="features-header">
+                <h2 class="features-title">✨ Tính năng nổi bật</h2>
+                <p class="features-subtitle">
+                    Khám phá những ưu điểm vượt trội của hệ thống
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">Độ chính xác cao</h3>
+                    <p class="feature-desc">Đạt 85-92% độ chính xác với mô hình Naive Bayes và TF-IDF</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Xử lý nhanh</h3>
+                    <p class="feature-desc">Phân loại văn bản trong vài giây với hiệu suất tối ưu</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🇻🇳</div>
+                    <h3 class="feature-title">Hỗ trợ tiếng Việt</h3>
+                    <p class="feature-desc">Được huấn luyện đặc biệt cho văn bản tiếng Việt</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📜</div>
+                    <h3 class="feature-title">Lưu lịch sử</h3>
+                    <p class="feature-desc">Tự động lưu lịch sử tra cứu để xem lại sau</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topics Section -->
+        <section class="topics-section">
+            <h2 class="topics-title">📊 Các chủ đề được hỗ trợ</h2>
+            
+            <div class="topics-grid">
+                <div class="topic-badge topic-sports">🏃 Thể thao</div>
+                <div class="topic-badge topic-economy">💰 Kinh tế</div>
+                <div class="topic-badge topic-entertainment">🎬 Giải trí</div>
+                <div class="topic-badge topic-technology">💻 Công nghệ</div>
+                <div class="topic-badge topic-education">📚 Giáo dục</div>
+                <div class="topic-badge topic-health">❤️ Sức khỏe</div>
+                <div class="topic-badge topic-law">⚖️ Pháp luật</div>
+                <div class="topic-badge topic-news">📰 Thời sự</div>
+                <div class="topic-badge topic-science">🔬 Khoa học</div>
+                <div class="topic-badge topic-culture">🎭 Văn hóa</div>
+            </div>
+        </section>
+
+        <!-- CTA Banner -->
+        <section class="cta-banner">
+            <h2 class="cta-text">Sẵn sàng thử nghiệm? </h2>
+            <a href="pages/classify.html" class="cta-button">
+                Thử ngay →
+            </a>
+        </section>
+    </main>
+
+    <!-- Mobile Bottom Nav -->
+    <nav class="navbar-mobile">
+        <div class="navbar-mobile-container">
+            <a href="index.html" class="navbar-mobile-link" data-page="home">
+                <span class="navbar-mobile-emoji">🏠</span>
+                <span class="navbar-mobile-text">Giới thiệu</span>
+            </a>
+            <a href="pages/classify.html" class="navbar-mobile-link" data-page="classify">
+                <span class="navbar-mobile-emoji">🔍</span>
+                <span class="navbar-mobile-text">Phân loại</span>
+            </a>
+            <a href="pages/history.html" class="navbar-mobile-link" data-page="history">
+                <span class="navbar-mobile-emoji">📜</span>
+                <span class="navbar-mobile-text">Lịch sử</span>
+            </a>
+            <button class="navbar-mobile-link theme-toggle">
+                <span class="navbar-mobile-emoji theme-toggle-icon">☀️</span>
+                <!-- <span class="navbar-mobile-text">Theme</span> -->
+            </button>
+        </div>
+    </nav>
+
+    <!-- JavaScript -->
+    <script src="js/theme.js"></script>
+    <script src="js/navbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch sử - Topic Classifier</title>
+    <meta name="description" content="Xem lại lịch sử phân loại văn bản tiếng Việt với Topic Classifier. Lọc theo chủ đề, xóa bản ghi dễ dàng." />
+    <link rel="canonical" href="https://leotran-topic-classification.netlify.app/pages/history.html" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <meta property="og:title" content="Lịch sử phân loại - Topic Classifier" />
+    <meta property="og:description" content="Xem và quản lý các lần phân loại văn bản tiếng Việt của bạn." />
+    <meta property="og:url" content="https://leotran-topic-classification.netlify.app/pages/history.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://leotran-topic-classification.netlify.app/assets/logo.svg" />
+    <meta name="twitter:card" content="summary" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com? plugins=forms,container-queries"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter: wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'light-bg': '#EFF6FF',
+                        'light-card': 'rgba(255, 255, 255, 0.8)',
+                        'dark-bg': '#0B021D',
+                        'dark-card': 'rgba(22, 12, 44, 0.8)',
+                        'dark-border': '#2B1A4B',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+    
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="../css/shared.css">
+    <!-- History CSS -->
+    <link rel="stylesheet" href="../css/history.css">
+</head>
+<body class="font-sans bg-light-bg dark:bg-dark-bg text-gray-900 dark:text-gray-100 antialiased">
+
+    <!-- Desktop Navbar -->
+    <nav class="navbar-desktop">
+        <div class="navbar-container">
+            <a href="../index.html" class="navbar-logo">
+                <img src="../assets/logo.svg" alt="Topic Classifier logo" class="navbar-logo-img">
+                <span class="navbar-logo-text">Topic Classifier</span>
+            </a>
+            
+            <div class="navbar-menu">
+                <a href="../index.html" class="navbar-link" data-page="home">
+                    <span class="navbar-link-emoji">🏠</span>
+                    <span>Giới thiệu</span>
+                </a>
+                <a href="classify.html" class="navbar-link" data-page="classify">
+                    <span class="navbar-link-emoji">🔍</span>
+                    <span>Phân loại</span>
+                </a>
+                <a href="history.html" class="navbar-link" data-page="history">
+                    <span class="navbar-link-emoji">📜</span>
+                    <span>Lịch sử</span>
+                </a>
+            </div>
+            
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <span class="theme-toggle-icon">☀️</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="history-main">
+        <div class="history-container">
+            <!-- Header -->
+            <div class="history-header">
+                <h1 class="history-title">📜 Lịch sử phân loại</h1>
+            </div>
+
+            <!-- Controls -->
+            <div class="history-controls">
+                <div class="controls-left">
+                    <button id="selectAllBtn" class="control-btn control-btn-select">
+                        Chọn tất cả
+                    </button>
+                    <button id="deleteBtn" class="control-btn control-btn-danger" disabled>
+                        Xóa
+                    </button>
+                </div>
+                
+                <div class="controls-right">
+                    <select id="topicFilter" class="topic-filter">
+                        <option value="all">Tất cả</option>
+                        <option value="Thể thao">🏃 Thể thao</option>
+                        <option value="Kinh tế">💰 Kinh tế</option>
+                        <option value="Giải trí">🎬 Giải trí</option>
+                        <option value="Công nghệ">💻 Công nghệ</option>
+                        <option value="Giáo dục">📚 Giáo dục</option>
+                        <option value="Sức khỏe">❤️ Sức khỏe</option>
+                        <option value="Pháp luật">⚖️ Pháp luật</option>
+                        <option value="Thời sự">📰 Thời sự</option>
+                        <option value="Khoa học">🔬 Khoa học</option>
+                        <option value="Văn hóa">🎭 Văn hóa</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- History List -->
+            <div id="historyList" class="history-list">
+                <!-- Empty State (shown by JS if no history) -->
+            </div>
+
+            <!-- Pagination -->
+            <div id="pagination" class="pagination">
+                <button id="prevBtn" class="pagination-btn" disabled>← Trước</button>
+                <span id="pageInfo" class="pagination-info">Trang 1 / 1</span>
+                <button id="nextBtn" class="pagination-btn" disabled>Sau →</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile Bottom Nav -->
+    <nav class="navbar-mobile">
+        <div class="navbar-mobile-container">
+            <a href="../index.html" class="navbar-mobile-link" data-page="home">
+                <span class="navbar-mobile-emoji">🏠</span>
+                <span class="navbar-mobile-text">Giới thiệu</span>
+            </a>
+            <a href="classify.html" class="navbar-mobile-link" data-page="classify">
+                <span class="navbar-mobile-emoji">🔍</span>
+                <span class="navbar-mobile-text">Phân loại</span>
+            </a>
+            <a href="history.html" class="navbar-mobile-link" data-page="history">
+                <span class="navbar-mobile-emoji">📜</span>
+                <span class="navbar-mobile-text">Lịch sử</span>
+            </a>
+            <button class="navbar-mobile-link theme-toggle">
+                <span class="navbar-mobile-emoji theme-toggle-icon">☀️</span>
+                <!-- <span class="navbar-mobile-text">Theme</span> -->
+            </button>
+        </div>
+    </nav>
+
+    <!-- JavaScript -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/history.js"></script>
+</body>
+</html>
