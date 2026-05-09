@@ -546,7 +546,7 @@ fetch('http://localhost:5000/predict', {
 ## 📜 License
 
 ```
-Copyright © 2025 Tran Duc Long
+Copyright © 2026 Phạm Minh Phương
 
 This project is shared for EDUCATIONAL and REFERENCE purposes only. 
 
@@ -582,9 +582,9 @@ All intellectual property rights belong to the author.
 ---
 <a id="contact"></a>
 ## ☎️ Contact
-- **GitHub:** [Tran Duc Long](https://github.com/TranDucLong040904)
-- **Email:** 22010139@st.phenikaa-uni.edu.vn
-- **Project Repository:** [Topic Classification](https://github.com/TranDucLong040904/topic-classification.git)
+- **GitHub:** [Pham Minh Phuong](https://github.com/Phuong04082004)
+- **Email:** 22010243@st.phenikaa-uni.edu.vn
+- **Project Repository:** [Topic Classification](https://github.com/Phuong04082004/Topic_Classification)
 <div align="center">
 
 ---
@@ -593,9 +593,9 @@ All intellectual property rights belong to the author.
 ---
 <br>
 
-Made with ❤️ by **Tran Duc Long**
+Made with ❤️ by **Pham Minh Phuong**
 
-Copyright © 2025 • [MIT License](#-license)
+Copyright © 2026 • [MIT License](#-license)
 
 **[⬆ Back to top](#-topic-classification---vietnamese-text-classifier)**
 
