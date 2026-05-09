@@ -526,7 +526,7 @@ fetch('http://localhost:5000/predict', {
 ## 📜 Giấy Phép
 
 ```
-Bản quyền © 2025 Trần Đức Long
+Bản quyền © 2026 Phạm Minh Phương
 
 Dự án này được chia sẻ chỉ với mục đích GIÁO DỤC và THAM KHẢO.
 
@@ -562,9 +562,9 @@ Mọi quyền sở hữu trí tuệ thuộc về tác giả.
 ---
 <a id="lien-he"></a>
 ## ☎️ Liên Hệ
-- **GitHub:** [Trần Đức Long](https://github.com/TranDucLong040904)
-- **Email:** 22010139@st.phenikaa-uni.edu.vn
-- **Kho lưu trữ dự án:** [Topic Classification](https://github.com/TranDucLong040904/topic-classification.git)
+- **GitHub:** [Phạm Minh Phương](https://github.com/Phuong04082004)
+- **Email:** 22010243@st.phenikaa-uni.edu.vn
+- **Kho lưu trữ dự án:** [Topic Classification](https://github.com/Phuong04082004/Topic_Classification)
 <div align="center">
 
 ---
@@ -573,9 +573,9 @@ Mọi quyền sở hữu trí tuệ thuộc về tác giả.
 ---
 <br>
 
-Được thực hiện với ❤️ bởi **Trần Đức Long**
+Được thực hiện với ❤️ bởi **Phạm Minh Phương**
 
-Bản quyền © 2025 • [Giấy Phép MIT](#giay-phep)
+Bản quyền © 2026 • [Giấy Phép MIT](#giay-phep)
 
 **[⬆ Về đầu trang](#-topic-classification---phân-loại-văn-bản-tiếng-việt)**
 
