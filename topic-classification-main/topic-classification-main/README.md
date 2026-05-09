@@ -153,7 +153,7 @@ Git      >= 2.40
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/TranDucLong040904/topic-classification.git
+git clone https://github.com/Phuong04082004/Topic_Classification
 cd topic-classification
 
 # 2. Create virtual environment
